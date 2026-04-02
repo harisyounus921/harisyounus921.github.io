@@ -1,12 +1,445 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Haris Younus Apps</title>
+  <meta name="description" content="Official app website of Haris Younus. Flutter developer building mobile apps and digital experiences." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.15);
+      color: #93c5fd;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(147, 197, 253, 0.2);
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: #60a5fa;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #cbd5e1;
+      max-width: 650px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.25s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+
+    .hero-card p {
+      color: #cbd5e1;
+      margin-bottom: 12px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: #cbd5e1;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 22px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96, 165, 250, 0.35);
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    .app-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 250px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(96, 165, 250, 0.15);
+      color: #bfdbfe;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .contact-box {
+      text-align: center;
+      padding: 40px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      border-radius: 24px;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 14px;
+      font-size: 34px;
+    }
+
+    .contact-box p {
+      color: #dbeafe;
+      margin-bottom: 24px;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .small-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .small-links a {
+      color: #93c5fd;
+    }
+
+    @media (max-width: 900px) {
+      .hero-content,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 80px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Haris Younus Apps</h1>
-  <p>This website is used for app verification and app-ads.txt hosting.</p>
-  <p><a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html">Privacy Policy</a></p>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div>
+        <div class="badge">Official Developer Website</div>
+        <h1>Hi, I’m <span class="highlight">Haris Younus</span><br />Flutter App Developer</h1>
+        <p class="subtitle">
+          I build modern mobile applications with clean user experiences, scalable architecture,
+          and real-world integrations including Firebase, AI features, payments, chat systems,
+          and performance-focused mobile products.
+        </p>
+
+        <div class="buttons">
+          <a href="#apps" class="btn btn-primary">View My Apps</a>
+          <a href="mailto:harisyounus921@gmail.com" class="btn btn-secondary">Contact Me</a>
+          <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html" class="btn btn-secondary">Privacy Policy</a>
+        </div>
+
+        <p style="color:#94a3b8; font-size:14px;">
+          This website is used for official app information, verification, app support, and app-ads.txt hosting.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <h3>Developer Snapshot</h3>
+        <p><strong>Name:</strong> Haris Younus</p>
+        <p><strong>Specialization:</strong> Flutter Mobile App Development</p>
+        <p><strong>Focus Areas:</strong> Android, iOS, Firebase, AI Integrations, UI/UX</p>
+        <p><strong>Support Email:</strong> harisyounus921@gmail.com</p>
+        <p><strong>Website:</strong> harisyounus921.github.io</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What I Build</h2>
+      <p class="section-subtitle">
+        I create mobile apps designed for real users and real business needs — from social and chat apps
+        to productivity tools, AI-powered experiences, and scalable startup MVPs.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Mobile Apps</h3>
+          <p>
+            High-performance Flutter apps for Android and iOS with clean architecture,
+            responsive UI, and production-ready deployment.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>AI Integrations</h3>
+          <p>
+            Smart app experiences powered by AI such as chatbots, content generation,
+            assistant flows, recommendation logic, and automation.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Backend & Firebase</h3>
+          <p>
+            Realtime databases, authentication, cloud functions, notifications, analytics,
+            and scalable app infrastructure using Firebase services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="apps">
+    <div class="container">
+      <h2 class="section-title">Apps & Products</h2>
+      <p class="section-subtitle">
+        A growing collection of mobile products, tools, and app experiences published or maintained under my developer profile.
+      </p>
+
+      <div class="grid grid-2">
+        <div class="card app-card">
+          <div>
+            <span class="tag">Communication App</span>
+            <h3>ChattyChat</h3>
+            <p>
+              A communication-focused mobile experience built with modern app flows, privacy support,
+              and user-friendly mobile interaction patterns.
+            </p>
+          </div>
+          <div class="small-links" style="justify-content:flex-start; margin-top:24px;">
+            <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div class="card app-card">
+          <div>
+            <span class="tag">More Apps Coming Soon</span>
+            <h3>Upcoming Projects</h3>
+            <p>
+              This website will continue to be updated with future app launches, support pages,
+              product information, and official app documentation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Support & Transparency</h2>
+      <p class="section-subtitle">
+        This website serves as the official support and verification hub for my published applications.
+      </p>
+
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>App Support</h3>
+          <p>
+            Users can access support information, privacy details, and app-related documentation from this site.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Policy Hosting</h3>
+          <p>
+            Privacy policy pages and other legal or informational resources are hosted here for transparency and compliance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ad Verification</h3>
+          <p>
+            This domain also hosts app-ads.txt for authorized advertising verification and monetization support.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-box">
+        <h2>Let’s Connect</h2>
+        <p>
+          For support, app-related questions, or development inquiries, feel free to reach out.
+        </p>
+        <div class="buttons" style="justify-content:center;">
+          <a href="mailto:harisyounus921@gmail.com" class="btn btn-primary">Email Me</a>
+          <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html" class="btn btn-secondary">Open Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Haris Younus. All rights reserved.</p>
+      <div class="small-links">
+        <a href="mailto:harisyounus921@gmail.com">Email</a>
+        <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html">Privacy Policy</a>
+        <a href="/app-ads.txt">app-ads.txt</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
