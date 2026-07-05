@@ -1,445 +1,371 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haris Younus Apps</title>
-  <meta name="description" content="Official app website of Haris Younus. Flutter developer building mobile apps and digital experiences." />
-  <meta name="theme-color" content="#0f172a" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="harisyounus builds AI-powered mobile apps that help startups launch faster and scale with confidence."
+    />
+    <title>harisyounus | AI-Powered Mobile App Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#work">Skip to work</a>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    }
-
-    body {
-      background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
-      color: #f8fafc;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1150px;
-      margin: auto;
-    }
-
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 60px 0;
-    }
-
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: rgba(59, 130, 246, 0.15);
-      color: #93c5fd;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 20px;
-      border: 1px solid rgba(147, 197, 253, 0.2);
-    }
-
-    h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      margin-bottom: 18px;
-    }
-
-    .highlight {
-      color: #60a5fa;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: #cbd5e1;
-      max-width: 650px;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 600;
-      transition: 0.25s ease;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: #3b82f6;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #2563eb;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.08);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.14);
-      transform: translateY(-2px);
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 28px;
-      border-radius: 24px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-    }
-
-    .hero-card h3 {
-      margin-bottom: 16px;
-      font-size: 22px;
-    }
-
-    .hero-card p {
-      color: #cbd5e1;
-      margin-bottom: 12px;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 36px;
-      margin-bottom: 14px;
-    }
-
-    .section-subtitle {
-      color: #cbd5e1;
-      max-width: 700px;
-      margin-bottom: 40px;
-    }
-
-    .grid {
-      display: grid;
-      gap: 24px;
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 28px;
-      border-radius: 22px;
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(96, 165, 250, 0.35);
-    }
-
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      color: #cbd5e1;
-      font-size: 15px;
-    }
-
-    .app-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 250px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(96, 165, 250, 0.15);
-      color: #bfdbfe;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      margin-bottom: 18px;
-    }
-
-    .contact-box {
-      text-align: center;
-      padding: 40px;
-      background: rgba(59, 130, 246, 0.12);
-      border: 1px solid rgba(96, 165, 250, 0.18);
-      border-radius: 24px;
-    }
-
-    .contact-box h2 {
-      margin-bottom: 14px;
-      font-size: 34px;
-    }
-
-    .contact-box p {
-      color: #dbeafe;
-      margin-bottom: 24px;
-    }
-
-    footer {
-      padding: 30px 0 50px;
-      text-align: center;
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    .small-links {
-      margin-top: 16px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .small-links a {
-      color: #93c5fd;
-    }
-
-    @media (max-width: 900px) {
-      .hero-content,
-      .grid-3,
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 40px;
-      }
-
-      .section-title {
-        font-size: 30px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding-top: 80px;
-      }
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 34px;
-      }
-
-      .subtitle {
-        font-size: 16px;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <section class="hero">
-    <div class="container hero-content">
-      <div>
-        <div class="badge">Official Developer Website</div>
-        <h1>Hi, I’m <span class="highlight">Haris Younus</span><br />Flutter App Developer</h1>
-        <p class="subtitle">
-          I build modern mobile applications with clean user experiences, scalable architecture,
-          and real-world integrations including Firebase, AI features, payments, chat systems,
-          and performance-focused mobile products.
-        </p>
-
-        <div class="buttons">
-          <a href="#apps" class="btn btn-primary">View My Apps</a>
-          <a href="mailto:harisyounus921@gmail.com" class="btn btn-secondary">Contact Me</a>
-          <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html" class="btn btn-secondary">Privacy Policy</a>
-        </div>
-
-        <p style="color:#94a3b8; font-size:14px;">
-          This website is used for official app information, verification, app support, and app-ads.txt hosting.
-        </p>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#top" aria-label="harisyounus home">
+          <span class="brand-mark">HY<small>LABS</small></span>
+          <span class="brand-name">harisyounus</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav" aria-label="Primary">
+          <a href="#impact">Impact</a>
+          <a href="#process">Process</a>
+          <a href="#work">Work</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="hero-card">
-        <h3>Developer Snapshot</h3>
-        <p><strong>Name:</strong> Haris Younus</p>
-        <p><strong>Specialization:</strong> Flutter Mobile App Development</p>
-        <p><strong>Focus Areas:</strong> Android, iOS, Firebase, AI Integrations, UI/UX</p>
-        <p><strong>Support Email:</strong> harisyounus921@gmail.com</p>
-        <p><strong>Website:</strong> harisyounus921.github.io</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">What I Build</h2>
-      <p class="section-subtitle">
-        I create mobile apps designed for real users and real business needs — from social and chat apps
-        to productivity tools, AI-powered experiences, and scalable startup MVPs.
-      </p>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>Mobile Apps</h3>
-          <p>
-            High-performance Flutter apps for Android and iOS with clean architecture,
-            responsive UI, and production-ready deployment.
-          </p>
+    <main>
+      <section id="top" class="hero texture">
+        <div class="wrap">
+          <div class="hero-copy">
+            <p class="eyebrow">AI MOBILE APP BUILDER · STARTUP LAUNCH PARTNER</p>
+            <h1>
+              I ship <span class="orange">AI</span>-powered mobile apps at up to
+              <span class="orange">70%</span> less than an agency charges you.
+            </h1>
+            <div class="hero-actions">
+              <a class="button primary" href="#work">See the work</a>
+              <a
+                class="button secondary"
+                href="https://www.upwork.com/freelancers/~0104c7f70cefe018e1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hire on Upwork
+              </a>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="card">
-          <h3>AI Integrations</h3>
-          <p>
-            Smart app experiences powered by AI such as chatbots, content generation,
-            assistant flows, recommendation logic, and automation.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Backend & Firebase</h3>
-          <p>
-            Realtime databases, authentication, cloud functions, notifications, analytics,
-            and scalable app infrastructure using Firebase services.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="apps">
-    <div class="container">
-      <h2 class="section-title">Apps & Products</h2>
-      <p class="section-subtitle">
-        A growing collection of mobile products, tools, and app experiences published or maintained under my developer profile.
-      </p>
-
-      <div class="grid grid-2">
-        <div class="card app-card">
+      <section id="impact" class="section texture">
+        <div class="wrap split">
           <div>
-            <span class="tag">Communication App</span>
-            <h3>ChattyChat</h3>
-            <p>
-              A communication-focused mobile experience built with modern app flows, privacy support,
-              and user-friendly mobile interaction patterns.
+            <p class="eyebrow">Impact</p>
+            <h2>Shipping real products with real outcomes.</h2>
+            <p class="section-copy">
+              Not prototypes. Not demos. Apps in users' hands, generating downloads and revenue.
             </p>
           </div>
-          <div class="small-links" style="justify-content:flex-start; margin-top:24px;">
-            <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html">Privacy Policy</a>
+          <dl class="stats-grid">
+            <div>
+              <dd>10+</dd>
+              <dt>Production apps shipped</dt>
+            </div>
+            <div>
+              <dd>50,000+</dd>
+              <dt>Users across shipped products</dt>
+            </div>
+            <div>
+              <dd>$500K+</dd>
+              <dt>Revenue generated by products I've built</dt>
+            </div>
+            <div>
+              <dd>Top 20</dd>
+              <dt>App Store ranking</dt>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="process" class="section texture">
+        <div class="wrap">
+          <div class="process-heading">
+            <p class="eyebrow">Process</p>
+            <h2>How it works.</h2>
+          </div>
+          <div class="process-grid">
+            <article>
+              <span>01</span>
+              <h3>Discovery</h3>
+              <p>You share your idea, goals, launch timeline, and requirements.</p>
+            </article>
+            <span class="flow-arrow flow-1">→</span>
+            <article>
+              <span>02</span>
+              <h3>PRD &amp; Spec</h3>
+              <p>I document user flows, AI behavior, screens, and acceptance criteria.</p>
+            </article>
+            <span class="flow-arrow flow-2">→</span>
+            <article>
+              <span>03</span>
+              <h3>Architecture</h3>
+              <p>Tech stack, data models, backend services, and integrations are locked.</p>
+            </article>
+            <span class="flow-arrow flow-3">→</span>
+            <article>
+              <span>04</span>
+              <h3>Build</h3>
+              <p>AI-native mobile development, fast iterations, spec-driven execution.</p>
+            </article>
+            <span class="flow-arrow flow-4">→</span>
+            <article>
+              <span>05</span>
+              <h3>Review &amp; QA</h3>
+              <p>You test, I fix, and the product gets polished before launch.</p>
+            </article>
+            <span class="flow-arrow flow-5">→</span>
+            <article>
+              <span>06</span>
+              <h3>Launch</h3>
+              <p>Production-ready, deployed, and built to scale from day one.</p>
+            </article>
           </div>
         </div>
+      </section>
 
-        <div class="card app-card">
-          <div>
-            <span class="tag">More Apps Coming Soon</span>
-            <h3>Upcoming Projects</h3>
-            <p>
-              This website will continue to be updated with future app launches, support pages,
-              product information, and official app documentation.
-            </p>
+      <section id="work" class="section texture">
+        <div class="wrap">
+          <div class="section-bar">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2>Selected work</h2>
+            </div>
+            <div class="carousel-controls">
+              <button type="button" class="icon-button" data-carousel-prev aria-label="Previous project">
+                &larr;
+              </button>
+              <button type="button" class="icon-button" data-carousel-next aria-label="Next project">
+                &rarr;
+              </button>
+            </div>
+          </div>
+
+          <div class="work-shell" aria-live="polite">
+            <article class="work-card active" data-project>
+              <div>
+                <div class="work-number">01 / 05</div>
+                <div class="project-media image-gallery" aria-label="Sceniva app previews">
+                  <div class="media-grid sceniva-grid">
+                    <img src="assets/work/sceniva-create-idea.png" alt="Sceniva AI chat scene generation screen" />
+                    <img src="assets/work/sceniva-photoshoots.png" alt="Sceniva AI photoshoot category screen" />
+                    <img src="assets/work/sceniva-favorites.png" alt="Sceniva saved favorite scenes screen" />
+                  </div>
+                </div>
+              </div>
+              <div class="work-meta">
+                <p class="card-kicker">AI Chat · Image Generation</p>
+                <h3>Sceniva</h3>
+                <h4>AI chat and scene generation in one mobile app.</h4>
+                <p>
+                  Flutter app with AI chat, voice interaction, scene templates, image generation,
+                  favorites, subscriptions, localization, and a Cloud Run agent backend.
+                </p>
+                <div class="outcome"><strong>Agentic AI backend</strong> · Firebase · RevenueCat</div>
+                <div class="chips"><span>Flutter</span><span>OpenAI</span><span>Qdrant RAG</span></div>
+                <a class="project-link" href="https://sceniva.tech/" target="_blank" rel="noopener noreferrer">View project →</a>
+              </div>
+            </article>
+
+            <article class="work-card" data-project>
+              <div>
+                <div class="work-number">02 / 05</div>
+                <div class="project-media image-gallery" aria-label="ESL Kurd app previews">
+                  <img src="assets/work/esl-kurd.png" alt="ESL Kurd English and Kurdish learning app screens" />
+                </div>
+              </div>
+              <div class="work-meta">
+                <p class="card-kicker">Education · Language Learning</p>
+                <h3>ESL</h3>
+                <h4>English and Kurdish learning with audio-first practice.</h4>
+                <p>Mobile learning app with subjects, topics, vocabulary, translation, speech input, text-to-speech, listen-tap lessons, word matching, favorites, and Firebase-backed content.</p>
+                <div class="outcome"><strong>Bilingual learning flows</strong> · Audio practice · Vocabulary tools</div>
+                <div class="chips"><span>Flutter</span><span>TTS / Speech</span><span>Firebase</span></div>
+                <a class="project-link" href="https://eslkurd.com/" target="_blank" rel="noopener noreferrer">View project →</a>
+              </div>
+            </article>
+
+            <article class="work-card" data-project>
+              <div>
+                <div class="work-number">03 / 05</div>
+                <div class="project-media image-gallery" aria-label="ZimboMenu marketplace app previews">
+                  <img src="assets/work/zimbomenu.png" alt="ZimboMenu marketplace listing and detail screens" />
+                </div>
+              </div>
+              <div class="work-meta">
+                <p class="card-kicker">Marketplace · Mobile Platform</p>
+                <h3>ZimboMenu</h3>
+                <h4>Classified listings, seller tools, and chat in one app.</h4>
+                <p>Feature-rich marketplace app with item listings, seller profiles, favorites, map-based discovery, chat and audio messaging, payments, subscriptions, notifications, blogs, and Zimbo Connect experiences.</p>
+                <div class="outcome"><strong>Listings marketplace</strong> · Seller profiles · Real-time chat</div>
+                <div class="chips"><span>Flutter</span><span>Firebase</span><span>Payments</span></div>
+                <a class="project-link" href="https://zimbomenu.com/" target="_blank" rel="noopener noreferrer">View project →</a>
+              </div>
+            </article>
+
+            <article class="work-card" data-project>
+              <div>
+                <div class="work-number">04 / 05</div>
+                <div class="project-media image-gallery" aria-label="BUFF fitness app previews">
+                  <img src="assets/work/buff.png" alt="BUFF fitness app community, subscription, and progress screens" />
+                </div>
+              </div>
+              <div class="work-meta">
+                <p class="card-kicker">Fitness · Mobile</p>
+                <h3>BUFF</h3>
+                <h4>Workout plans, progress systems, and fitness community.</h4>
+                <p>Consumer fitness app with workout plans, exercise libraries, custom workouts, timers, progress graphs, medals, streaks, subscriptions, social feeds, profiles, followers, and push notifications.</p>
+                <div class="outcome"><strong>Training journeys</strong> · Gamification · Social fitness</div>
+                <div class="chips"><span>Flutter</span><span>RevenueCat</span><span>Analytics</span></div>
+                <a class="project-link" href="https://www.buffdudes.us/" target="_blank" rel="noopener noreferrer">View project →</a>
+              </div>
+            </article>
+
+            <article class="work-card" data-project>
+              <div>
+                <div class="work-number">05 / 05</div>
+                <div class="project-media image-gallery" aria-label="MealNudge app preview">
+                  <img src="assets/work/mealnudge.png" alt="MealNudge achievements and streak tracking screen" />
+                </div>
+              </div>
+              <div class="work-meta">
+                <p class="card-kicker">Health AI · Mobile</p>
+                <h3>MealNudge</h3>
+                <h4>AI diet tracking without manual calorie logging.</h4>
+                <p>Nutrition app that combines food photo recognition, barcode scanning, meal logs, activity tracking, dashboard analytics, achievements, notifications, and a conversational AI diet coach.</p>
+                <div class="outcome"><strong>AI food recognition</strong> · Coach chat · Health tracking</div>
+                <div class="chips"><span>Flutter</span><span>Firebase AI</span><span>HealthKit</span></div>
+                <a class="project-link" href="https://apps.apple.com/app/mealnudge/id6784236796" target="_blank" rel="noopener noreferrer">View project →</a>
+              </div>
+            </article>
+          </div>
+          <div class="dots" aria-label="Project slides"></div>
+        </div>
+      </section>
+
+      <section id="certificates" class="section texture">
+        <div class="wrap">
+          <p class="eyebrow">Certified</p>
+          <h2>Anthropic-certified in Claude.</h2>
+          <div class="certificate-grid">
+            <article>
+              <span>Anthropic</span>
+              <h3>Claude 101</h3>
+              <p>
+                Formal training in working with Claude as a development partner: prompting,
+                context design, and the reasoning patterns that get reliable results out of the
+                model.
+              </p>
+              <a href="#" aria-disabled="true">View certification →</a>
+            </article>
+            <article>
+              <span>Anthropic</span>
+              <h3>Claude Code 101</h3>
+              <p>
+                Formal training in Claude Code's agentic workflow, the same AI-native development
+                process used to build every project on this site.
+              </p>
+              <a href="#" aria-disabled="true">View certification →</a>
+            </article>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Support & Transparency</h2>
-      <p class="section-subtitle">
-        This website serves as the official support and verification hub for my published applications.
-      </p>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>App Support</h3>
-          <p>
-            Users can access support information, privacy details, and app-related documentation from this site.
+      <section id="about" class="section texture">
+        <div class="wrap about-text">
+          <p class="eyebrow">About</p>
+          <p class="about-lede">
+            I'm Haris Younus, an AI-powered mobile app builder. I build launch-ready apps
+            using an AI-native, spec-driven workflow: scope is locked before code, so startups
+            ship faster without trading away quality, security, or scale.
           </p>
-        </div>
-
-        <div class="card">
-          <h3>Policy Hosting</h3>
-          <p>
-            Privacy policy pages and other legal or informational resources are hosted here for transparency and compliance.
+          <p class="about-muted">
+            I work across mobile, backend, and AI integration, turning product ideas into apps
+            that hold up with real users. I focus on startup products in AI, fitness, food,
+            education, and health.
           </p>
+          <p class="about-stats">AI MOBILE APPS · MVP TO SCALE · STARTUP LAUNCH PARTNER</p>
         </div>
+      </section>
 
-        <div class="card">
-          <h3>Ad Verification</h3>
-          <p>
-            This domain also hosts app-ads.txt for authorized advertising verification and monetization support.
-          </p>
+      <section id="stack" class="section stack-section texture">
+        <div class="wrap">
+          <p class="about-text eyebrow">Stack</p>
+          <dl class="stack-table">
+            <div class="stack-row">
+              <dt>Mobile</dt>
+              <dd class="stack-list"><span>Flutter</span><span>React Native</span></dd>
+            </div>
+            <div class="stack-row">
+              <dt>Frontend</dt>
+              <dd class="stack-list"><span>React</span><span>Next.js</span><span>TypeScript</span></dd>
+            </div>
+            <div class="stack-row">
+              <dt>Backend</dt>
+              <dd class="stack-list"><span>Node.js</span><span>.NET</span></dd>
+            </div>
+            <div class="stack-row">
+              <dt>Data</dt>
+              <dd class="stack-list"><span>PostgreSQL</span><span>Supabase</span><span>Firebase</span></dd>
+            </div>
+            <div class="stack-row">
+              <dt>AI / ML</dt>
+              <dd class="stack-list"><span>OpenAI</span><span>Google Gemini</span><span>TensorFlow</span></dd>
+            </div>
+            <div class="stack-row">
+              <dt>Payments</dt>
+              <dd class="stack-list"><span>Stripe</span><span>RevenueCat</span></dd>
+            </div>
+            <div class="stack-row">
+              <dt>Infra</dt>
+              <dd class="stack-list"><span>AWS</span><span>Vercel</span></dd>
+            </div>
+          </dl>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="contact-box">
-        <h2>Let’s Connect</h2>
-        <p>
-          For support, app-related questions, or development inquiries, feel free to reach out.
-        </p>
-        <div class="buttons" style="justify-content:center;">
-          <a href="mailto:harisyounus921@gmail.com" class="btn btn-primary">Email Me</a>
-          <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html" class="btn btn-secondary">Open Privacy Policy</a>
+      <section id="contact" class="contact texture">
+        <div class="wrap">
+          <p class="eyebrow">Let's build</p>
+          <h2>
+            Have something to ship?
+            <span>Tell me what you're building and by when, and I'll tell you exactly how I'd approach it.</span>
+          </h2>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:harisyounus921@gmail.com">Email me</a>
+            <a
+              class="button secondary"
+              href="https://www.upwork.com/freelancers/~0104c7f70cefe018e1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hire on Upwork
+            </a>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </main>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 Haris Younus. All rights reserved.</p>
-      <div class="small-links">
-        <a href="mailto:harisyounus921@gmail.com">Email</a>
-        <a href="https://harisyounus921.github.io/chattyChat/privacy-policy.html">Privacy Policy</a>
-        <a href="/app-ads.txt">app-ads.txt</a>
-      </div>
-    </div>
-  </footer>
+    <footer>
+      <p>AI-powered mobile apps · harisyounus · 2026</p>
+    </footer>
 
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
